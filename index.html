@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Meyer - Senior Executive Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .resume-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: white;
+            padding: 40px 50px 35px;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            transform: translate(50px, -50px);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header-photo {
+    width: 140px;
+    height: 180px;
+    flex-shrink: 0;
+}
+
+.header-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    filter: drop-shadow(0 0 18px rgba(255,255,255,0.35));
+    mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 65%, transparent 100%);
+}
+        
+        .name {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: 400;
+            color: #e2e8f0;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5e1;
+        }
+        
+        .main-content {
+            padding: 0 50px 50px;
+        }
+        
+        .section {
+            margin: 45px 0;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #3b82f6;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #1d4ed8;
+        }
+        
+        .profile-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #374151;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: #1e40af;
+        }
+        
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .value-prop {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #3b82f6;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .value-prop h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+        
+        .value-prop p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .competency-category {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .competency-category:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+        }
+        
+        .competency-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 12px;
+        }
+        
+        .competency-list {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+        }
+        
+        .experience-item {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-header {
+            margin-bottom: 15px;
+        }
+        
+        .company-role {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .company {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e40af;
+        }
+        
+        .role {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 2px;
+        }
+        
+        .period-location {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .achievements li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #374151;
+        }
+        
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .metric {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .education-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        
+        .institution {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 3px;
+        }
+        
+        .year {
+            font-size: 13px;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #bae6fd;
+        }
+        
+        .skill-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0c4a6e;
+            margin-bottom: 10px;
+        }
+        
+        .skill-list {
+            font-size: 13px;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+        
+        .philosophy {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .philosophy-quote {
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            .resume-container { box-shadow: none; }
+            .section { page-break-inside: avoid; }
+            .experience-item { page-break-inside: avoid; }
+        }
+        
+        @media (max-width: 768px) {
+            .header { padding: 30px 25px; }
+            .main-content { padding: 0 25px 30px; }
+            .name { font-size: 32px; }
+            .title { font-size: 18px; }
+            .contact-info { gap: 15px; }
+            .value-props { grid-template-columns: 1fr; }
+            .competencies-grid { grid-template-columns: 1fr; }
+            .company-role { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <div class="header-content">
+    <div class="header-photo">
+        <img src="ID MT 23 NF.jpg" alt="Tom Meyer">
+    </div>
+
+    <div>
+        <h1 class="name">TOM MEYER</h1>
+        <p class="title">Senior Executive | Logistics & Supply Chain Management | P&L Leadership</p>
+        <div class="contact-info">
+                    <div class="contact-item">📍 Vietnam</div>
+                    <div class="contact-item">📱 +849-0401-6663</div>
+                    <div class="contact-item">✉️ tommvn@gmail.com</div>
+                    <div class="contact-item">🔗 linkedin.com/in/tommeyervn</div>
+                    <div class="contact-item">🌍 Available for Global Relocation</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h2 class="section-title">EXECUTIVE PROFILE</h2>
+                <p class="profile-text">
+                    <span class="highlight">Transformational Senior Management Executive</span> with 17+ years driving exponential revenue growth and operational excellence across global logistics, supply chain management, and 3PL operations. Proven track record of delivering <span class="highlight">$20M+ P&L accountability</span>, achieving <span class="highlight">+32% profitability improvements</span>, and orchestrating complex multi-million dollar strategic partnerships. Expert in international market expansion, regulatory compliance (FIDI-FAIM ISO-9001), and cross-cultural business development across Asia-Pacific, European, and North American markets. Led <span class="highlight">Rugby Cùng Nhau national youth development initiative</span> as Volunteer Program Coordinator (2023-2025), engaging stakeholders, training professionals, managing coordinators, and orchestrating fundraising campaigns.
+                </p>
+                <div class="value-props">
+                    <div class="value-prop">
+                        <h4>Revenue Growth</h4>
+                        <p>Generated $20M+ in strategic partnerships | Delivered 32% profitability improvement | Managed $7.2M gross revenue operations</p>
+                    </div>
+                    <div class="value-prop">
+                        <h4>Market Expansion</h4>
+                        <p>Led successful market entry strategies across 15+ countries | Established regional brand leadership in competitive markets</p>
+                    </div>
+                    <div class="value-prop">
+                        <h4>Operational Excellence</h4>
+                        <p>Achieved FIDI-FAIM ISO-9001 compliance | Implemented supply chain optimisation reducing defects by 21% | Managed 27+ direct/indirect reports</p>
+                    </div>
+                    <div class="value-prop">
+                        <h4>Partnership Development</h4>
+                        <p>Secured $659K+ venture capital opportunities | Negotiated complex partnership agreements with Fortune 500 companies</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">CORE COMPETENCIES</h2>
+                <div class="competencies-grid">
+                    <div class="competency-category">
+                        <h3 class="competency-title">Executive Leadership</h3>
+                        <div class="competency-list">P&L Management | Board Reporting | Strategic Planning | Change Management | Cross-Cultural Leadership | Team Building & Development</div>
+                    </div>
+                    <div class="competency-category">
+                        <h3 class="competency-title">Revenue Generation</h3>
+                        <div class="competency-list">Business Development | Sales Leadership | Market Penetration | Customer Acquisition | Account Management | Contract Negotiation</div>
+                    </div>
+                    <div class="competency-category">
+                        <h3 class="competency-title">Supply Chain Excellence</h3>
+                        <div class="competency-list">3PL/4PL Operations | Logistics Management | Transportation Optimization | Warehouse Management | Quality Management Systems</div>
+                    </div>
+                    <div class="competency-category">
+                        <h3 class="competency-title">Strategic Operations</h3>
+                        <div class="competency-list">Regulatory Compliance | Risk Management | Due Diligence | M&A Support | International Trade | Project Management</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">SENIOR EXECUTIVE EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-role">
+                            <div>
+                                <div class="company">RUGBY CÙNG NHAU | National Charity Development Initiative</div>
+                                <div class="role">Founding Member & Executive Program Coordinator</div>
+                            </div>
+                            <div class="period-location">Vietnam | 2023-2025</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li><strong>Strategic Leadership:</strong> Spearheaded national youth development program impacting <span class="metric">130+ participants</span>, establishing sustainable educational framework with celebrity partnership</li>
+                        <li><strong>Stakeholder Management:</strong> Built strategic alliances with educational institutions, corporate partners, and government entities</li>
+                        <li><strong>Team Development:</strong> Trained <span class="metric">18 coaching professionals</span>, established mentorship protocols, and managed <span class="metric">5+ volunteer coordinators</span></li>
+                        <li><strong>Corporate Relations:</strong> Orchestrated <span class="metric">2 major fundraising initiatives</span>, secured corporate sponsorships, and managed public presentation campaigns</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-role">
+                            <div>
+                                <div class="company">AMMSTART HONG KONG LTD | Market entry & sales in Asia</div>
+                                <div class="role">Founder & General Director</div>
+                            </div>
+                            <div class="period-location">Vietnam | 2014-Current</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li><strong>Strategic Leadership:</strong> Founded and scaled market entry consultancy serving Fortune 500 clients across Asia-Pacific region</li>
+                        <li><strong>Client Portfolio Management:</strong> Secured and managed strategic accounts including <span class="metric">Pacorini Group SpA, AB Promotions, ECLOR Group Agrial (FR)</span></li>
+                        <li><strong>Market Intelligence:</strong> Delivered comprehensive trade intelligence and commercial execution strategies for international corporations</li>
+                        <li><strong>Revenue Generation:</strong> Established profitable operations through innovative 3PL outsourcing solutions and value chain optimisation</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-role">
+                            <div>
+                                <div class="company">HANSA MEYER GLOBAL GMBH | Project Logistics</div>
+                                <div class="role">Country Chief Representative</div>
+                            </div>
+                            <div class="period-location">Ho Chi Minh City | 2012</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li><strong>Country Leadership:</strong> Managed complete Vietnamese operations for German-based heavy-lift logistics leader</li>
+                        <li><strong>Revenue Achievement:</strong> Generated <span class="metric">€4.2M annual revenue</span> through strategic partnership development and sales facilitation</li>
+                        <li><strong>Partnership Development:</strong> Led Joint Venture research and negotiation (<span class="metric">50% partnership structure</span>)</li>
+                        <li><strong>Government Relations:</strong> Executed high-level institutional lobbying and regulatory compliance management</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-role">
+                            <div>
+                                <div class="company">SEKO LOGISTICS | 4PL & Contract Logistics</div>
+                                <div class="role">Regional Sales Manager</div>
+                            </div>
+                            <div class="period-location">Ho Chi Minh City | 2011 and 2013</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li><strong>Sales Leadership:</strong> Managed <span class="metric">12 strategic accounts</span> and supervised <span class="metric">15+ operational coordinators</span></li>
+                        <li><strong>Revenue Growth:</strong> Increased gross revenue from <span class="metric">$6.9M to $7.2M (+4.2% YoY growth)</span></li>
+                        <li><strong>Operational Excellence:</strong> Implemented SAP-based supply chain technology and container optimisation systems</li>
+                        <li><strong>Strategic Partnerships:</strong> Led <span class="metric">$20M RFQ proposal</span> development for UPS Supply Chain Solutions</li>
+                    </ul>
+                </div>
+
+<div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-role">
+                            <div>
+                                <div class="company">THE FREIGHT CO LTD | Freight Forwarding</div>
+                                <div class="role">Country Chief Representative</div>
+                            </div>
+                            <div class="period-location">Ho Chi Minh City | 2008-2010</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li><strong>Sales Leadership:</strong> Swiss-owned, non-asset-based 3PL, managing <span class="metric">5 direct and 27 indirect employees</span> Developed strategic business, vessels chartering, and contract logistics across Vietnam.</li>
+                        <li><strong>Financial & volume growth:</strong> to 3,000 TEU/year, USD 2 million turnover <span class="metric">(+3.2% YoY)</span>, heavy-lift & project cargo.</li>
+                        <li><strong>Operational Supervision:</strong> Spearheaded end-to-end <span class="metric">chartering, freight forwarding, and port operations</span>, vessel bookings up to 20,000 DWT.</li>
+                        <li><strong>International Networking:</strong> Represented at <span class="metric">key international logistics events</span>, strengthening partnerships and expanding market presence<span class="metric">(GLN, WCA, GPLN, Breakbulk ANR)</span></li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="company-role">
+                            <div>
+                                <div class="company">ASIAN TIGERS VIETNAM LTD | Relocation</div>
+                                <div class="role">Branch Manager</div>
+                            </div>
+                            <div class="period-location">Hanoi | 2000-2007</div>
+                        </div>
+                    </div>
+                    <ul class="achievements">
+                        <li><strong>General Management:</strong> Led complete P&L operations for Asian market leader in relocation services (<span class="metric">32 employees, 2 sales managers</span>)</li>
+                        <li><strong>Profitability Excellence:</strong> Achieved highest profitability in company history with <span class="metric">32% improvement during tenure</span></li>
+                        <li><strong>Compliance Leadership:</strong> Established <span class="metric">FIDI-FAIM compliance (ISO-9001)</span> and international safety standards</li>
+                        <li><strong>Brand Development:</strong> Built regional brand leadership and market dominance in North Vietnam market</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">EDUCATION & PROFESSIONAL DEVELOPMENT</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <div class="degree">Master of Arts (MA)</div>
+                        <div class="institution">International Commerce & Trade, ESC-IFCI, Clermont Ferrand, France</div>
+                        <div class="year">1993-1994</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Post Graduate Diploma</div>
+                        <div class="institution">Business Administration, EDC La Défense, Paris, France</div>
+                        <div class="year">1988-1992</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Economics (B)</div>
+                        <div class="institution">Saint Etienne College, Strasbourg, France</div>
+                        <div class="year">1988</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="degree">Military Leadership Training</div>
+                        <div class="institution">Sergeant Instructor, 1st Engineer Regiment, France</div>
+                        <div class="year">1992-1993</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">TECHNICAL COMPETENCIES</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-title">Enterprise Systems</div>
+                        <div class="skill-list">SAP Supply Chain Management | ERP Implementation | Digital Transformation | Data Analytics</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-title">Compliance & Standards</div>
+                        <div class="skill-list">FIDI-FAIM ISO-9001 | QMS & SIS | International Trade Regulations | Cross-Border Compliance</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-title">Financial Management</div>
+                        <div class="skill-list">P&L Accountability | Budget Management | Financial Modeling | ROI Analysis | Capital Allocation</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-title">Languages</div>
+                        <div class="skill-list">English (Fluent/Bilingual) | German (Fluent/Bilingual) | French (Native)</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="philosophy">
+                <div class="philosophy-quote">"Future is extremely bright, but we are still going to have to earn it"</div>
+                <div class="philosophy-quote">"Hitting growth targets starts by caring for the right team"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
